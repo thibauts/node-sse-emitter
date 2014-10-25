@@ -26,7 +26,6 @@ var SSE = require('sse-emitter');
 
 var sse = new SSE({
   keepAlive: 30000, // in ms, defaults to 10000
-  encoder: JSON.stringify // this is the default anyway, but could be btoa(), ...
 });
 
 var app = express();
