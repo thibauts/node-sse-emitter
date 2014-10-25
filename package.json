@@ -1,6 +1,6 @@
 {
   "name": "sse-emitter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Server-Sent Events as simple as they can get",
   "author": "thibauts",
   "license": "MIT",
