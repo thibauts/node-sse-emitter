@@ -8,6 +8,7 @@ function SSE(options) {
 
   options = options || {};
   this.keepAlive = options.keepAlive || DEFAULT_KEEPALIVE;
+  this.encoder = options.encoder || JSON.stringify;
 }
 
 util.inherits(SSE, EventEmitter);
@@ -28,7 +29,7 @@ SSE.prototype.bind = function() {
 
     function onevent(data) {
       res.write('id: ' + id + '\n');
-      res.write('data: ' + JSON.stringify(data) + '\n\n');
+      res.write('data: ' + self.encoder(data) + '\n\n');
       id++;
     }
 
